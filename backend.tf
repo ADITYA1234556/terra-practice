@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.0.0"
   backend "s3" {
     bucket         = "111-aditya-kms"
     key            = "terraform/state/terraform.tfstate"
