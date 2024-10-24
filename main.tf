@@ -1,7 +1,11 @@
-provider "aws" {
-  region = var.REGION
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"  # Adjust based on your needs
+    }
+  }
 }
-
 #CREATE DYNAMO DB TABLE
 resource "aws_dynamodb_table" "dynamodb" {
   name         = "${var.DYNAMODBNAME}-${terraform.workspace}"
